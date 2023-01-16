@@ -84,17 +84,22 @@ const Search = () => {
     };
   })
 
-
+  const enterKeyPressed = (e: { keyCode: number; target: { value: string; }; }) => {
+    if (e.keyCode === 13) {
+      getCurrentWetherDetails(e.target.value)
+      setInputCity("")
+    }
+  };
 
   return (
     <StyledWeather  data-testid="search">
     <div className="overlay">
-    <h1>WEATHER APP</h1>
+    <h1>Weather Forecasting App</h1>
     <div className='header'>
     <div className='search-container'>
             <input type="text" 
             data-testid="search-input"
-            onKeyDown={undefined}
+            onKeyDown={enterKeyPressed}
             placeholder={"  Enter Search City"}
             value={inputCity}
             onChange={handleChangeInput}
@@ -115,36 +120,38 @@ const Search = () => {
                 <h1>{`${Math.round(data.main.temp - 273.15)}°${
                   "C"
                 }`}</h1>
-                <h3>{WEEKDAYS[dayjs.unix(data.dt).day()]}</h3>
+                <h2>{WEEKDAYS[dayjs.unix(data.dt).day()]}</h2>
         </div>
         </div>
         <div className='bottom-container' data-testid="current-data">
             <div className='inside-container'>
                 <div className='title'>Humidity</div>
                 <img className="inside-icon" src='/Images/humidity.png' alt='icon'></img>
-                <div className='title'>{data.main.humidity}</div>
+                <div className='title-content'>{data.main.humidity}</div>
                 </div>
                 <div className='inside-container'>
                 <div className='title'>Pressure</div>
                 <img className="inside-icon" src='/Images/pressure.png' alt='icon'></img>
-                <div className='title'>{data.main.pressure}</div>
+                <div className='title-content'>{data.main.pressure}</div>
                 </div>
                 <div className='inside-container'>
-                <div className='title'>Temp</div>
+                <div className='title'>Temperature</div>
                 <img className="inside-icon" src='/Images/temp.png' alt='icon'></img>
                 <div className='min-temp'>Min:{Math.round(data.main.temp_min - 273.15)}°C Max: {Math.round(data.main.temp_min - 273.15)}°C</div>
                 </div>            
                 <div className='inside-container'>
                 <div className='title'>Wind</div>
                 <img className="inside-icon" src='/Images/wind.png' alt='icon'></img>
-                <div className='title'>{data.wind.speed}</div>
+                <div className='title-content'>{data.wind.speed}</div>
                 </div>        
                 </div>
         </div>
     }
     </div>{  Object.keys(data).length > 0 &&
     Object.keys(fivedata).length > 0 && 
-    <><div className='five-day-header'>Next Five days Weather</div>
+    <>
+    <div className='section-five-day'>
+    <div className='five-day-header'>Next Five days Weather</div></div>
     <><div className='five-day-container'>{fivedata.list.slice(1,6).map((item) => 
      <div className='inside-five-container'>
         <span className='card-content-title'>{WEEKDAYS[dayjs.unix(item.dt).day()]}</span>

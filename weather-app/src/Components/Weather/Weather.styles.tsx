@@ -2,28 +2,32 @@ import styled from "styled-components";
 
 const StyledWeather = styled.div`
     width: 100%;
-    height: 200vh;
+    height: 210vh;
     background-position: center;
     background-size: cover;
     background-image: url("https://cdn.wallpapersafari.com/80/81/4VKLIo.jpg");
 
   .overlay {
     width: 100%;
-    height: 200vh;
+    height: 210vh;
     z-index: 0.9;
     background-color: rgba(3, 2, 2, 0.2);
   }
 
   h2 {
     font-family: Gumela;
-    font-size: bold;
+    font-size: 30px;
+    font-style: italic;
   }
   h1 {
     text-align: center;
     font-size: 40px;
-    color: antiquewhite;
+    color: #e6cc36;
     padding-top: 10%;
-    padding-bottom: 3%;
+    border-color: #f1c3c3 !important;
+    padding-bottom: 6%;
+    font-style: oblique;
+    word-spacing: 15px;
     margin: 0% !important;
     font-family: Gumela;
   }
@@ -41,7 +45,7 @@ const StyledWeather = styled.div`
   }
 
 .section {
-    width: 40%;
+    /* width: 40%; */
     height:40vh;
     padding: 2rem;
     display: flex;
@@ -148,10 +152,17 @@ const StyledWeather = styled.div`
 ;
 
 }
+
+.section-five-day {
+    height:9vh;
+    display: flex;
+    justify-content: center;
+    /* border-radius: 0.7rem; */
+    color: white;
+}
 .inside-container {
     width: 13vw;
     height:15vh;
-    padding-top: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-bottom: 0%;
@@ -176,15 +187,18 @@ const StyledWeather = styled.div`
     font-weight: 800;
 }
 .five-day-header {
-    font-size: 40px;
-    font-weight: bold;
+    padding:2%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    border-radius: 1.7rem;
+    color: #d1ebe8;
+    font-size: 30px;
     justify-content: center;
+    align-items: center;
     font-family: Gumela;
-    border-radius: 20%;
-    color: #f8f3f7;
-    opacity: 0.9;
+    font-style: oblique;
+    font-weight: bold;
+    background-color: rgba(29, 168, 210, 0.7);
 }
 .inside-five-container {
     width: 15vw;
@@ -199,7 +213,9 @@ const StyledWeather = styled.div`
     align-items: center;
     font-family: Gumela;
     font-weight: bold;
+    /* background-color: rgba(67, 66, 67, 0.7); */
     background-color: rgba(23, 4, 22, 0.7);
+
 }
 .card-content {
     font-size: 20px;
@@ -220,6 +236,15 @@ const StyledWeather = styled.div`
 }
 .inside-icon {
     width: 40px;
+}
+.title {
+    font-size: 25px;
+    font-style: italic;
+    color: #edd432;
+}
+.title-content {
+    font-size: 25px;
+    color: #f8f7f5;
 }
 
 // Media query for small devices
@@ -243,6 +268,7 @@ const StyledWeather = styled.div`
     padding: 2rem;
     padding-bottom: 0%;
     background-color: rgba(23, 4, 22, 0.7);
+    
 }
 .section {
     width: 50%;
@@ -288,9 +314,12 @@ h1 {
 .title {
     font-size: 20px;
 }
+.title-content{
+    font-size: 16px;
+}
 .min-temp {
     padding-top: 2px;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
 }
 .max-temp {
