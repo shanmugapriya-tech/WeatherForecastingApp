@@ -145,13 +145,13 @@ const Search = () => {
     </div>{  Object.keys(data).length > 0 &&
     Object.keys(fivedata).length > 0 && 
     <><div className='five-day-header'>Next Five days Weather</div>
-    <><div className='five-day-container'>{fivedata.list.slice(1,6).map((x) => 
+    <><div className='five-day-container'>{fivedata.list.slice(1,6).map((item) => 
      <div className='inside-five-container'>
-        <span className='card-content-title'>{WEEKDAYS[dayjs.unix(x.dt).day()]}</span>
+        <span className='card-content-title'>{WEEKDAYS[dayjs.unix(item.dt).day()]}</span>
         <img className="day-icon"  alt="weather-icon"
-        src={`http://openweathermap.org/img/wn/${x.weather[0].icon}@2x.png`}                    />
-        <span className="day-temp">{Math.round(x.temp.day - 273.15)}°C</span>
-        <div className='card-content'>{x.weather[0].description}</div>
+        src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}/>
+        <span className="day-temp">{Math.round(item.temp.day - 273.15)}°C</span>
+        <div className='card-content'>{item.weather[0].description}</div>
      </div> 
      )
         }
