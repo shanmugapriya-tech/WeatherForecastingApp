@@ -69,7 +69,7 @@ const Weather = () => {
 
   const getFivedaysWetherDetails = (cityName : string) => {
     if (!cityName) return
-    const apiURLData = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${inputCity}&cnt=6&appid=${WEATHER_API_KEY}`
+    const apiURLData = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${inputCity}&cnt=6&appid=34480b98aa332da53123a0ac63a4ea9d`
     axios.get(apiURLData).then((res) => {
       setFiveData(res.data)  
       }).catch((err) => {
