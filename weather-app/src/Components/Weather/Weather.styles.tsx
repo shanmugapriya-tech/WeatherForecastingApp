@@ -39,7 +39,7 @@ const StyledWeather = styled.div`
   }
   input {
   width: 40vw;
-    height:4vh;
+    height:5vh;
     border-radius: 50px;
     padding-left: 20px;
   border: none;
@@ -158,7 +158,6 @@ const StyledWeather = styled.div`
     width:89vw;
 
 ;
-
 }
 
 .section-five-day {
@@ -198,7 +197,7 @@ const StyledWeather = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: 1.7rem;
-    color: #d1ebe8;
+    color: #0b0b0b;
     font-size: 30px;
     justify-content: center;
     align-items: center;

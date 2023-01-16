@@ -2,8 +2,8 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import Weather from "./Weather";
 
 
-describe("search Component", () => {
-  it("rendered search component", () => {
+describe("Weather Component", () => {
+  it("rendered Weather component", () => {
     const { getByTestId } = render(
         <Weather />
     );

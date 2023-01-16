@@ -6,7 +6,7 @@ import { FiveDataProps } from '../../Types/types';
 import StyledWeather from './Weather.styles';
 
 
-const Search = () => {
+const Weather = () => {
 
   // State for maintaining city information
 
@@ -23,7 +23,7 @@ const Search = () => {
 
   // api key for getting api results
 
-  const apiKey = "32ba0bfed592484379e51106cef3f204";
+  const WEATHER_API_KEY = "32ba0bfed592484379e51106cef3f204";
 
 
   // Array for getting day by using time
@@ -43,7 +43,7 @@ const Search = () => {
 
   const getCurrentWetherDetails = (cityName : string) => {
     if (!cityName) return
-    const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey
+    const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + WEATHER_API_KEY
     axios.get(apiURL).then((res) => {
       console.log("response", res.data)
       setData(res.data)
@@ -69,7 +69,7 @@ const Search = () => {
 
   const getFivedaysWetherDetails = (cityName : string) => {
     if (!cityName) return
-    const apiURLData = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${inputCity}&cnt=6&appid=34480b98aa332da53123a0ac63a4ea9d`
+    const apiURLData = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${inputCity}&cnt=6&appid=${WEATHER_API_KEY}`
     axios.get(apiURLData).then((res) => {
       setFiveData(res.data)  
       }).catch((err) => {
@@ -151,7 +151,7 @@ const Search = () => {
     Object.keys(fivedata).length > 0 && 
     <>
     <div className='section-five-day'>
-    <div className='five-day-header'>Next Five days Weather</div></div>
+    <div className='five-day-header'>Next Five Days Weather</div></div>
     <><div className='five-day-container'>{fivedata.list.slice(1,6).map((item) => 
      <div className='inside-five-container'>
         <span className='card-content-title'>{WEEKDAYS[dayjs.unix(item.dt).day()]}</span>
@@ -171,6 +171,4 @@ const Search = () => {
   )
 }
 
-export default Search;
-
-
+export default Weather;
