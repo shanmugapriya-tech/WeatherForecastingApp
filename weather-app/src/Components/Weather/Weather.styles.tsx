@@ -37,15 +37,23 @@ const StyledWeather = styled.div`
     gap: 10px;
     align-items: center;
   }
-  .search-input {
-    width: 40vw;
-    height:5vh;
-    border-radius: 10px;
-    border: none;
-  }
+  input {
+  width: 40vw;
+    height:4vh;
+    border-radius: 50px;
+    padding-left: 20px;
+  border: none;
+  font-size: 1.1rem;
+  font-family: gumela;
+  border: 1px solid rgba(255,255,255, 0.8);
+  color: #060606;
+}
 
+::placeholder {
+    padding-left: 20px;
+  color: #0d0d0d;
+}
 .section {
-    /* width: 40%; */
     height:40vh;
     padding: 2rem;
     display: flex;
@@ -157,7 +165,6 @@ const StyledWeather = styled.div`
     height:9vh;
     display: flex;
     justify-content: center;
-    /* border-radius: 0.7rem; */
     color: white;
 }
 .inside-container {
@@ -213,7 +220,6 @@ const StyledWeather = styled.div`
     align-items: center;
     font-family: Gumela;
     font-weight: bold;
-    /* background-color: rgba(67, 66, 67, 0.7); */
     background-color: rgba(23, 4, 22, 0.7);
 
 }
@@ -258,6 +264,7 @@ const StyledWeather = styled.div`
     .five-day-container {
     display: grid;
     padding-left: 15%;
+    padding-top: 15%;
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
     gap: 2rem;
@@ -301,6 +308,7 @@ const StyledWeather = styled.div`
     height: 80vh;
     align-items: center;
     padding-left: 12%;
+    padding-bottom: 20%;
 ;
 
 }
@@ -308,8 +316,9 @@ h1 {
     font-size: 27px !important;
 }
 .five-day-header {
-    font-size: 30px;
-    padding: 3%;
+    font-size: 22px;
+    padding: 2%;
+    
 }
 .title {
     font-size: 20px;
