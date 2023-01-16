@@ -208,7 +208,7 @@ const StyledWeather = styled.div`
 }
 .inside-five-container {
     width: 15vw;
-    height:28vh;
+    height:31vh;
     padding-top: 1rem;
     padding-bottom: 0%;
     display: flex;
@@ -454,10 +454,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(2, 0.4fr);
     gap: 1rem;
-    height: 80vh;
     align-items: center;
     padding-left: 33%;
-    /* padding: 10%; */
 ;
 
 }
@@ -466,7 +464,6 @@ h1 {
 }
 .five-day-header {
     font-size: 30px;
-    padding: 3%;
 }
 .title {
     font-size: 20px;
